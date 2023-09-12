@@ -13,7 +13,7 @@ class ErrorHangling {
         errorMessage = "Please enter valid E-mail.";
         break;
       case "wrong-password":
-        errorMessage = "Please enter currect password.";
+        errorMessage = "Please enter correct password.";
         break;
       case "user-not-found":
         errorMessage = "User not found.\nPlease Register yourself !";

@@ -66,19 +66,7 @@ class _StudentHomeState extends State<StudentHome> {
       ;
     });
     final noticeList = Provider.of<List<Notice>?>(context);
-    String _getGreeting() {
-      var now = DateTime.now();
-      var hour = now.hour;
-
-      if (hour >= 5 && hour < 12) {
-        return "Good Morning";
-      } else if (hour >= 12 && hour < 17) {
-        return "Good Afternoon";
-      } else if (hour >= 17 && hour < 20) {
-        return "Good Evening";
-      }
-      return "Good Night";
-    }
+  
 
     return Scaffold(
       backgroundColor: Color(0xFFfbd1c0),
@@ -103,7 +91,7 @@ class _StudentHomeState extends State<StudentHome> {
                           Align(
                             alignment: Alignment.centerLeft,
                             child: Text(
-                              _getGreeting(),
+                              'Irasshaimase',
                               style: TextStyle(
                                 fontSize: 32.0,
                                 fontWeight: FontWeight.w700,

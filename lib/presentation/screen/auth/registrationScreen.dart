@@ -379,19 +379,24 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                             ),
                           ),
                           onTap: () async {
-                            _saveForm();
-                            setState(() {
-                              showLoading = true;
-                            });
-                            progressIndicater(context, showLoading = true);
-                            FireBaseUser? user = await createUser();
-                            userDataProvider.changeId(user!.uid);
-                            userDataProvider.saveUserData();
-                            await showAlert == true
-                                ? null
-                                : progressIndicater(
-                                    context, showLoading = true);
-                            Navigator.pop(context);
+                            if (_emailError.isEmpty) {
+                              _saveForm();
+                              setState(() {
+                                showLoading = true;
+                              });
+                              progressIndicater(context, showLoading = true);
+                              if (_emailError.isEmpty) {
+                                // Check if email error is still empty after validation
+                                FireBaseUser? user = await createUser();
+                                userDataProvider.changeId(user!.uid);
+                                userDataProvider.saveUserData();
+                                await showAlert == true
+                                    ? null
+                                    : progressIndicater(
+                                        context, showLoading = true);
+                                Navigator.pop(context);
+                              }
+                            }
                           },
                         ),
                         const SizedBox(

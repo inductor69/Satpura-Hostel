@@ -152,7 +152,9 @@ class _StudentDetailScreenState extends State<StudentDetailScreen> {
                                   ' ' +
                                   userDataList.first.lastName,
                               style: TextStyle(
-                                  fontSize: 29, fontWeight: FontWeight.w600),
+                                  fontSize: 28, fontWeight: FontWeight.w600),
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 2,
                             ),
                           ],
                         ),
@@ -164,7 +166,8 @@ class _StudentDetailScreenState extends State<StudentDetailScreen> {
                           child: Card(
                             elevation: 1,
                             shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10)),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
                             child: Container(
                               decoration: const BoxDecoration(
                                 borderRadius:
@@ -172,6 +175,7 @@ class _StudentDetailScreenState extends State<StudentDetailScreen> {
                                 color: Color.fromARGB(183, 255, 255, 255),
                               ),
                               child: DataTable(
+                                columnSpacing: 15,
                                 columns: [
                                   DataColumn(
                                     label: Text(
@@ -180,14 +184,19 @@ class _StudentDetailScreenState extends State<StudentDetailScreen> {
                                         fontWeight: FontWeight.w700,
                                         fontSize: 17,
                                       ),
+                                      maxLines: 1,
                                     ),
                                   ),
                                   DataColumn(
-                                    label: Text(
-                                      userDataList.first.roomNo,
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.w700,
-                                        fontSize: 17,
+                                    label: Flexible(
+                                      child: Text(
+                                        userDataList.first.roomNo,
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 17,
+                                        ),
+                                        overflow: TextOverflow.ellipsis,
+                                        maxLines: 2,
                                       ),
                                     ),
                                   ),
@@ -216,7 +225,7 @@ class _StudentDetailScreenState extends State<StudentDetailScreen> {
                                             fontSize: 17,
                                           ),
                                           overflow: TextOverflow.ellipsis,
-                                          maxLines: 2,
+                                          maxLines: 1,
                                         ),
                                       ),
                                     ),
@@ -226,8 +235,10 @@ class _StudentDetailScreenState extends State<StudentDetailScreen> {
                                       Text(
                                         'Phone No.',
                                         style: TextStyle(
-                                            fontWeight: FontWeight.w700,
-                                            fontSize: 17),
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 17,
+                                        ),
+                                        maxLines: 1,
                                       ),
                                     ),
                                     DataCell(
@@ -237,6 +248,8 @@ class _StudentDetailScreenState extends State<StudentDetailScreen> {
                                           fontWeight: FontWeight.w700,
                                           fontSize: 17,
                                         ),
+                                        overflow: TextOverflow.ellipsis,
+                                        maxLines: 1,
                                       ),
                                     ),
                                   ]),
@@ -246,8 +259,10 @@ class _StudentDetailScreenState extends State<StudentDetailScreen> {
                                         Text(
                                           'Entry No.',
                                           style: TextStyle(
-                                              fontWeight: FontWeight.w700,
-                                              fontSize: 17),
+                                            fontWeight: FontWeight.w700,
+                                            fontSize: 17,
+                                          ),
+                                          maxLines: 1,
                                         ),
                                       ),
                                       DataCell(
@@ -257,6 +272,8 @@ class _StudentDetailScreenState extends State<StudentDetailScreen> {
                                             fontWeight: FontWeight.w700,
                                             fontSize: 17,
                                           ),
+                                          overflow: TextOverflow.ellipsis,
+                                          maxLines: 1,
                                         ),
                                       ),
                                     ],
