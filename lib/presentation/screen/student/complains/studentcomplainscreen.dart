@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:hostelapplication/presentation/screen/student/complains/StudentPastComplaint.dart';
+import 'package:hostelapplication/presentation/screen/student/complains/studentPastComplaint.dart';
 import 'package:hostelapplication/presentation/screen/student/complains/studentAddComplain.dart';
 import 'package:hostelapplication/presentation/screen/student/studentDrawer.dart';
 
@@ -46,8 +46,11 @@ class _StudentComplainScreenState extends State<StudentComplainScreen> {
               MaterialPageRoute(
                   builder: (context) => StudentPastComplaintScreen()));
         },
-         backgroundColor: Color(0xFFFEFFFE),
-        child: Icon(Icons.comment,  color: Colors.black,),
+        backgroundColor: Color(0xFFFEFFFE),
+        child: Icon(
+          Icons.comment,
+          color: Colors.black,
+        ),
       ),
       drawer: const StudentDrawer(),
       body: Container(
@@ -109,8 +112,7 @@ class _StudentComplainScreenState extends State<StudentComplainScreen> {
                           textAlign: TextAlign.center,
                           imagesText[index].toString(),
                           style: const TextStyle(
-                              fontSize: 18,
-                              color: Colors.black),
+                              fontSize: 18, color: Colors.black),
                         ),
                       ),
                     ],

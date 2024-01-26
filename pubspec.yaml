@@ -15,18 +15,18 @@ dependencies:
   flutter:
     sdk: flutter
   shared_preferences: ^2.0.15
-  firebase_core: ^1.18.0
-  firebase_auth: ^3.3.20
-  cloud_firestore: ^3.1.18
-  firebase_storage: ^10.2.18
-  uuid: ^3.0.6
+  firebase_core: ^2.24.2
+  firebase_auth: ^4.16.0
+  cloud_firestore: ^4.14.0
+  firebase_storage: ^11.6.0
+  uuid: ^4.3.3
   provider: ^6.0.3
   rflutter_alert:
   date_time_picker:
-  image_picker: ^0.8.5+3
+  image_picker: ^1.0.7
   file_picker:
   curved_navigation_bar: ^1.0.3
-  google_fonts: ^4.0.3
+  google_fonts: ^6.1.0
   intl: ^0.17.0
   flutter_downloader: ^1.10.2
   path_provider: ^2.0.14

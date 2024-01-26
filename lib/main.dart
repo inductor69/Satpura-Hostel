@@ -24,8 +24,6 @@ import 'package:firebase_core/firebase_core.dart';
 Future<void> main() async {
   int? initScreen;
 
-  
-
   WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences prefs = await SharedPreferences.getInstance();
   initScreen = prefs.getInt("initScreen");
@@ -33,10 +31,11 @@ Future<void> main() async {
   await Firebase.initializeApp();
   // Plugin must be initialized before using
   await FlutterDownloader.initialize(
-    debug: true, // optional: set to false to disable printing logs to console (default: true)
-    ignoreSsl: true // option: set to false to disable working with http links (default: false)
-  );
-
+      debug:
+          true, // optional: set to false to disable printing logs to console (default: true)
+      ignoreSsl:
+          true // option: set to false to disable working with http links (default: false)
+      );
 
   runApp(
     MultiProvider(
@@ -96,23 +95,21 @@ Future<void> main() async {
 }
 
 class MyApp extends StatelessWidget {
-  
   const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
-     theme: ThemeData(
-      fontFamily: GoogleFonts.poppins().fontFamily,
-      appBarTheme: AppBarTheme(
-        elevation: 0,
-        shape: Border(bottom: BorderSide(color: Colors.black, width: 1)),
-          backgroundColor: Colors.white,
-          foregroundColor: Colors.black//here you can give the text color
-          
-          )
-    ),
-    onGenerateRoute: Routes.generateRoute,
+    return MaterialApp(
+      theme: ThemeData(
+          fontFamily: GoogleFonts.poppins().fontFamily,
+          appBarTheme: AppBarTheme(
+              elevation: 0,
+              shape: Border(bottom: BorderSide(color: Colors.black, width: 1)),
+              backgroundColor: Colors.white,
+              foregroundColor: Colors.black //here you can give the text color
+
+              )),
+      onGenerateRoute: Routes.generateRoute,
     );
   }
 }

@@ -46,8 +46,7 @@ class _StudentHomeState extends State<StudentHome> {
     super.dispose();
   }
 
-  static void downloadCallback(
-      String id, DownloadTaskStatus status, int progress) {
+  static void downloadCallback(String id, int status, int progress) {
     final SendPort send =
         IsolateNameServer.lookupPortByName('downloader_send_port')!;
     send.send([id, status, progress]);
@@ -66,7 +65,6 @@ class _StudentHomeState extends State<StudentHome> {
       ;
     });
     final noticeList = Provider.of<List<Notice>?>(context);
-  
 
     return Scaffold(
       backgroundColor: Color(0xFFfbd1c0),
